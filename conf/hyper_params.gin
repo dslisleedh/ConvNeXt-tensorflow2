@@ -1,0 +1,28 @@
+# Optimizer
+train.optimizer = @optimizer/tfa.optimizers.AdamW()
+
+optimizer/tfa.optimizers.AdamW.learning_rate = 3e-3
+optimizer/tfa.optimizers.AdamW.weight_decay = 1e-8
+optimizer/tfa.optimizers.AdamW.beta_1 = 0.9
+optimizer/tfa.optimizers.AdamW.beta_2 = 0.999
+
+# loss_fn
+train.loss_fn = @tf.keras.losses.CategoricalCrossentropy()
+tf.keras.losses.CategoricalCrossentropy.label_smoothing = 0.0
+
+# metrics
+train.metrics = [
+    @tf.keras.metrics.CategoricalAccuracy(),
+    @tfa.metrics.F1Score()
+]
+tfa.metrics.F1Score.num_classes = 38
+tfa.metrics.F1Score.average = 'macro'
+
+# others
+train.epochs = 50
+train.warmup_epochs = 5
+train.batch_size = 128
+train.patience = 0
+train.use_ema = False
+train.average_decay = 0.9999
+train.image_size = (224, 224)

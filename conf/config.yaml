@@ -1,0 +1,16 @@
+model: convnext_t  # convnext_t, convnext_s, convnext_b, convnext_l, convnext_xl
+
+defaults:
+  - override hydra/job_logging: colorlog
+  - override hydra/hydra_logging: colorlog
+
+log_prefix: ./logs/${model}/
+hydra:
+  run:
+    dir: ${log_prefix}/${now:%Y-%m-%d}_${now:%H-%M-%S}
+  sweep:
+    dir: ${log_prefix}/${now:%Y-%m-%d}_${now:%H-%M-%S}
+    subdir: ''
+
+  job:
+    chdir: True

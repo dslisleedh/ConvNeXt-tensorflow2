@@ -1,0 +1,15 @@
+train.model = @ConvNeXt()
+
+ConvNeXt.config = {
+        'n_filters': (256, 512, 1024, 2048),
+        'n_blocks': (3, 3, 27, 3),
+        'drop_rate': 0.4,
+        'n_classes': 38,
+        'block': {
+            'dwc_kernel': (7, 7),
+            'expansion_rate': 4,
+            'act': @tf.nn.gelu,
+            'norm': @tf.keras.layers.LayerNormalization,
+            'scale_init': 1e-6
+        }
+}
