@@ -21,7 +21,7 @@ tfa.metrics.F1Score.average = 'macro'
 # others
 train.epochs = 50
 train.warmup_epochs = 5
-train.batch_size = 128
+train.batch_size = 256
 train.patience = 0
 train.use_ema = False
 train.average_decay = 0.9999

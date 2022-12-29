@@ -1,4 +1,4 @@
-model: convnext_t  # convnext_t, convnext_s, convnext_b, convnext_l, convnext_xl
+model: convnext_es  # convnext_es, convnext_t, convnext_s, convnext_b, convnext_l, convnext_xl
 
 defaults:
   - override hydra/job_logging: colorlog

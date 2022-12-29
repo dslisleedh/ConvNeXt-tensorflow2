@@ -4,7 +4,7 @@ train.model = @ConvNeXt()
 
 ConvNeXt.config = {
         'n_filters': (48, 96, 192, 364),
-        'n_blocks': (3, 3, 3, 3),
+        'n_blocks': (1, 1, 3, 9),
         'drop_rate': 0.0,
         'n_classes': 38,
         'block': {
