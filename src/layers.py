@@ -69,7 +69,7 @@ class ConvNeXtBlock(tf.keras.layers.Layer):
             name='gamma', shape=(1, 1, 1, input_shape[-1]), initializer=tf.keras.initializers.Constant(self.scale_init),
             trainable=True
         )
-        self.stochastic_depth = tfa.layers.StochasticDepth(self.drop_rate)
+        self.stochastic_depth = tfa.layers.StochasticDepth(1. - self.drop_rate)
 
     def call(self, inputs, *args, **kwargs):
         x = self.dwc(inputs)
